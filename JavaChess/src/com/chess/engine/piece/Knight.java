@@ -19,7 +19,6 @@ public class Knight extends Piece{
 
 	Knight( final int piecePosition, final Team pieceTeam) {
 		super(piecePosition, pieceTeam);
-		// TODO Auto-generated constructor stub
 	}
 
 
