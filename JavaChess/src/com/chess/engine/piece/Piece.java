@@ -11,14 +11,22 @@ public abstract class Piece {
 
 	protected final int piecePosition;
 	protected final Team pieceTeam;
+	protected final boolean isFirstMove;
+	
 	
 	Piece(final int piecePosition, final Team pieceTeam){
 		this.piecePosition = piecePosition;
 		this.pieceTeam = pieceTeam;
+		
+		this.isFirstMove = false;
 	}
 	
 	public Team getPieceTeam() {
 			return this.pieceTeam;
+	}
+	
+	public boolean isFirstMove() {
+		return this.isFirstMove;
 	}
 	
 

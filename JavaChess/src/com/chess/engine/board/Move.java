@@ -8,7 +8,7 @@ public abstract class Move {
 	final Piece movedPiece;
 	final int destinationCoordinate;
 	
-	Move(final Board board,
+	private Move(final Board board,
 		 final Piece movedPiece,
 		 final int destinationCoordinate){
 		this.board = board;
