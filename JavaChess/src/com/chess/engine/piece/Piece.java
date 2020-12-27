@@ -21,6 +21,10 @@ public abstract class Piece {
 		this.isFirstMove = false;
 	}
 	
+	public int getPiecePosition() {
+		return this.piecePosition;
+	}
+	
 	public Team getPieceTeam() {
 			return this.pieceTeam;
 	}

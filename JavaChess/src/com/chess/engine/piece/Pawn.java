@@ -15,7 +15,7 @@ public class Pawn extends Piece {
 	
 	public final static int[] CANDIDATE_MOVE_COORDINATE = {8,16, 7 , 9};
 
-	Pawn(final int piecePosition, final Team pieceTeam) {
+	public Pawn(final Team pieceTeam, final int piecePosition) {
 		super(piecePosition, pieceTeam);
 		// TODO Auto-generated constructor stub
 	}

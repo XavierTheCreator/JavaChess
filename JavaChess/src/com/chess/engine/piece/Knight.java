@@ -17,7 +17,7 @@ public class Knight extends Piece{
 	
 	private static final int[] MOVE_SQUARES = {-17, -15, -10, -6, 6, 10, 15, 17};
 
-	Knight( final int piecePosition, final Team pieceTeam) {
+	public Knight( final Team pieceTeam, final int piecePosition) {
 		super(piecePosition, pieceTeam);
 	}
 

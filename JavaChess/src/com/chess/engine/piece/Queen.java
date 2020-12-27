@@ -17,7 +17,7 @@ public class Queen extends Piece {
 	
 	public static final int[] CANDIDATE_MOVE_VECTOR_COORDINATES = {-9, -8, -7, -1, 1, 7, 8, 9 };
 
-	Queen(int piecePosition, Team pieceTeam) {
+	public Queen(final Team pieceTeam, final int piecePosition) {
 		super(piecePosition, pieceTeam);
 		// TODO Auto-generated constructor stub
 	}
