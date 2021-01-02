@@ -54,6 +54,11 @@ public abstract class Tile {
 			// TODO Auto-generated method stub
 			return null;
 		}
+		
+		@Override 
+		public String toString() {
+			return "-";
+		}
 	}
 	
 	
@@ -76,6 +81,12 @@ public abstract class Tile {
 		@Override
 		public Piece getPiece() {
 			return this.pieceOnTile;
+		}
+		
+		@Override
+		public String toString(){
+				return getPiece().getPieceTeam().isBlack() ? toString().toLowerCase() :
+					toString();
 		}
 		
 	}

@@ -9,6 +9,7 @@ import com.chess.engine.board.Board;
 import com.chess.engine.board.BoardUtils;
 import com.chess.engine.board.Move;
 import com.chess.engine.board.Tile;
+import com.chess.engine.piece.Piece.PieceType;
 import com.google.common.collect.ImmutableList;
 
 import static com.chess.engine.board.Move.*;
@@ -57,7 +58,11 @@ public class Knight extends Piece{
 		
 		return ImmutableList.copyOf(legalMoves);
 	}
-
+	@Override
+	public String toString() {
+		return PieceType.KNIGHT.toString();
+	}
+	
 	private static boolean isFirstColumnExclusion(final int currentPosition, final int candidateOffset) {
 		
 		return BoardUtils.FIRST_COLUMN[currentPosition] && (candidateOffset == -17 || candidateOffset == -10 ||

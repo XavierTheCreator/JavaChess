@@ -10,6 +10,7 @@ import com.chess.engine.Team;
 import com.chess.engine.board.Board;
 import com.chess.engine.board.Move;
 import com.chess.engine.board.Move.MajorMove;
+import com.chess.engine.piece.Piece.PieceType;
 import com.chess.engine.board.Tile;
 import com.google.common.collect.ImmutableList;
 
@@ -59,6 +60,12 @@ public class King extends Piece {
 		
 		
 	}
+	
+	@Override
+	public String toString() {
+		return PieceType.KING.toString();
+	}
+	
 	
 	private static boolean isFirstColumnExclusion(final int currentPosition, final int candidateOffset) {
 		
