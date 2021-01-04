@@ -103,21 +103,21 @@ public class Board {
 
 		// Whites
 		builder.setPiece(new Rook(Team.WHITE,48));
-		builder.setPiece(new Rook(Team.WHITE,49));
-		builder.setPiece(new Rook(Team.WHITE,50));
-		builder.setPiece(new Rook(Team.WHITE,51));
-		builder.setPiece(new Rook(Team.WHITE,52));
-		builder.setPiece(new Rook(Team.WHITE,53));
-		builder.setPiece(new Rook(Team.WHITE,54));
+		builder.setPiece(new Knight(Team.WHITE,49));
+		builder.setPiece(new Bishop(Team.WHITE,50));
+		builder.setPiece(new Queen(Team.WHITE,51));
+		builder.setPiece(new King(Team.WHITE,52));
+		builder.setPiece(new Bishop(Team.WHITE,53));
+		builder.setPiece(new Knight(Team.WHITE,54));
 		builder.setPiece(new Rook(Team.WHITE,55));
-		builder.setPiece(new Rook(Team.WHITE,56));
-		builder.setPiece(new Rook(Team.WHITE,57));
-		builder.setPiece(new Rook(Team.WHITE,58));
-		builder.setPiece(new Rook(Team.WHITE,59));
-		builder.setPiece(new Rook(Team.WHITE,60));
-		builder.setPiece(new Rook(Team.WHITE,61));
-		builder.setPiece(new Rook(Team.WHITE,62));
-		builder.setPiece(new Rook(Team.WHITE,63));
+		builder.setPiece(new Pawn(Team.WHITE,56));
+		builder.setPiece(new Pawn(Team.WHITE,57));
+		builder.setPiece(new Pawn(Team.WHITE,58));
+		builder.setPiece(new Pawn(Team.WHITE,59));
+		builder.setPiece(new Pawn(Team.WHITE,60));
+		builder.setPiece(new Pawn(Team.WHITE,61));
+		builder.setPiece(new Pawn(Team.WHITE,62));
+		builder.setPiece(new Pawn(Team.WHITE,63));
 
 		builder.setMoveMaker(Team.WHITE);
 		
@@ -140,7 +140,7 @@ public class Board {
 			return this;
 		}
 		
-		public Builder setMoveMaker(final Team team) {
+		public Builder setMoveMaker(Team nextMoveMaker) {
 			this.nextMoveMaker = nextMoveMaker;
 			return this;
 		}
