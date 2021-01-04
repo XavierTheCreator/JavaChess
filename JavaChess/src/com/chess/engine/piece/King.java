@@ -10,7 +10,6 @@ import com.chess.engine.Team;
 import com.chess.engine.board.Board;
 import com.chess.engine.board.Move;
 import com.chess.engine.board.Move.MajorMove;
-import com.chess.engine.piece.Piece.PieceType;
 import com.chess.engine.board.Tile;
 import com.google.common.collect.ImmutableList;
 

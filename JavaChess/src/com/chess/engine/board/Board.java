@@ -22,8 +22,8 @@ public class Board {
 		this.whitePieces = calculateActivePieces(this.gameBoard,Team.WHITE);
 		this.blackPieces = calculateActivePieces(this.gameBoard,Team.BLACK);
 		
-		final Collection<Move> whiteStdLegalMoves = calculateLegalMoves(this.whitePieces);
-		final Collection<Move> blackStdLegalMoves = calculateLegalMoves(this.blackPieces);
+		final Collection<Move> whiteStandardLegalMoves = calculateLegalMoves(this.whitePieces);
+		final Collection<Move> blackStandardLegalMoves = calculateLegalMoves(this.blackPieces);
 
 	}
 
@@ -42,10 +42,8 @@ public class Board {
 		
 	}
 		
-	private  Collection<Move> calculateLegalMoves(Collection<Piece> pieces) {
-		
+	private Collection<Move> calculateLegalMoves(final Collection<Piece> pieces) {
 		final List<Move> legalMoves = new ArrayList<>();
-		
 		for(final Piece piece: pieces) {
 			legalMoves.addAll(piece.calculateLegalMoves(this));
 		}
@@ -69,7 +67,8 @@ public class Board {
 	}
 
 	public Tile getTile(final int tileCoordinate) {
-		return null;
+		return gameBoard.get(tileCoordinate);
+		
 	}
 	
 	private static List<Tile> createGameBoard(final Builder builder){
@@ -102,22 +101,22 @@ public class Board {
 		builder.setPiece(new Pawn(Team.BLACK,15));
 
 		// Whites
-		builder.setPiece(new Rook(Team.WHITE,48));
-		builder.setPiece(new Knight(Team.WHITE,49));
-		builder.setPiece(new Bishop(Team.WHITE,50));
-		builder.setPiece(new Queen(Team.WHITE,51));
-		builder.setPiece(new King(Team.WHITE,52));
-		builder.setPiece(new Bishop(Team.WHITE,53));
-		builder.setPiece(new Knight(Team.WHITE,54));
-		builder.setPiece(new Rook(Team.WHITE,55));
-		builder.setPiece(new Pawn(Team.WHITE,56));
-		builder.setPiece(new Pawn(Team.WHITE,57));
-		builder.setPiece(new Pawn(Team.WHITE,58));
-		builder.setPiece(new Pawn(Team.WHITE,59));
-		builder.setPiece(new Pawn(Team.WHITE,60));
-		builder.setPiece(new Pawn(Team.WHITE,61));
-		builder.setPiece(new Pawn(Team.WHITE,62));
-		builder.setPiece(new Pawn(Team.WHITE,63));
+		builder.setPiece(new Pawn(Team.WHITE,48));
+		builder.setPiece(new Pawn(Team.WHITE,49));
+		builder.setPiece(new Pawn(Team.WHITE,50));
+		builder.setPiece(new Pawn(Team.WHITE,51));
+		builder.setPiece(new Pawn(Team.WHITE,52));
+		builder.setPiece(new Pawn(Team.WHITE,53));
+		builder.setPiece(new Pawn(Team.WHITE,54));
+		builder.setPiece(new Pawn(Team.WHITE,55));
+		builder.setPiece(new Rook(Team.WHITE,56));
+		builder.setPiece(new Knight(Team.WHITE,57));
+		builder.setPiece(new Bishop(Team.WHITE,58));
+		builder.setPiece(new Queen(Team.WHITE,59));
+		builder.setPiece(new King(Team.WHITE,60));
+		builder.setPiece(new Bishop(Team.WHITE,61));
+		builder.setPiece(new Knight(Team.WHITE,62));
+		builder.setPiece(new Rook(Team.WHITE,63));
 
 		builder.setMoveMaker(Team.WHITE);
 		

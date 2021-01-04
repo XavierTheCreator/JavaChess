@@ -45,13 +45,11 @@ public abstract class Tile {
 		
 		@Override
 		public boolean isTileOccupied() {
-			// TODO Auto-generated method stub
 			return false;
 		}
 		
 		@Override
 		public Piece getPiece() {
-			// TODO Auto-generated method stub
 			return null;
 		}
 		
@@ -85,8 +83,8 @@ public abstract class Tile {
 		
 		@Override
 		public String toString(){
-				return getPiece().getPieceTeam().isBlack() ? toString().toLowerCase() :
-					toString();
+				return getPiece().getPieceTeam().isBlack() ? getPiece().toString().toLowerCase() :
+					getPiece().toString();
 		}
 		
 	}
