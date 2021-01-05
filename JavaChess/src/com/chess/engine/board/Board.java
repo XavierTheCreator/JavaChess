@@ -8,6 +8,8 @@ import java.util.Map;
 
 import com.chess.engine.Team;
 import com.chess.engine.piece.*;
+import com.chess.engine.player.BlackPlayer;
+import com.chess.engine.player.WhitePlayer;
 import com.google.common.collect.ImmutableList;
 
 public class Board {
@@ -16,6 +18,8 @@ public class Board {
 	private final Collection<Piece> whitePieces;
 	private final Collection<Piece> blackPieces;
 	
+	private final WhitePlayer whitePlayer;
+	private final BlackPlayer blackPlayer;
 	
 	private Board(Builder builder) {
 		this.gameBoard = createGameBoard(builder);
@@ -24,6 +28,9 @@ public class Board {
 		
 		final Collection<Move> whiteStandardLegalMoves = calculateLegalMoves(this.whitePieces);
 		final Collection<Move> blackStandardLegalMoves = calculateLegalMoves(this.blackPieces);
+		
+		this.whitePlayer = new WhitePlayer(this,whiteStandardLegalMoves,blackStandardLegalMoves);
+		this.blackPlayer = new BlackPlayer(this,blackStandardLegalMoves,whiteStandardLegalMoves);
 
 	}
 
@@ -33,13 +40,21 @@ public class Board {
 		for(int i = 0; i < BoardUtils.NUM_TILES;i++) {
 			final String tileText = this.gameBoard.get(i).toString();
 			builder.append(String.format("%3s", tileText));
-			if((i+1)% BoardUtils.NUM_TILES_PER_NOW == 0) {
+			if((i+1)% BoardUtils.NUM_TILES_PER_ROW == 0) {
 				builder.append("\n");
 			}
 		}
 		
 		return builder.toString();
 		
+	}
+	
+	public Collection<Piece> getBlackPieces(){
+		return this.blackPieces;
+	}
+	
+	public Collection<Piece> getWhitePieces(){
+		return this.whitePieces;
 	}
 		
 	private Collection<Move> calculateLegalMoves(final Collection<Piece> pieces) {

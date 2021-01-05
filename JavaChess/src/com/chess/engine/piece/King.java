@@ -18,7 +18,7 @@ public class King extends Piece {
 	private final static int[] CANDIDATE_MOVE_COORDINATE = {-9, -8, -7, -1, 1, 7, 8, 9};
 
 	public King(final Team pieceTeam, final int piecePosition) {
-		super(piecePosition, pieceTeam);
+		super(piecePosition, pieceTeam, PieceType.KING);
 		// TODO Auto-generated constructor stub
 	}
 

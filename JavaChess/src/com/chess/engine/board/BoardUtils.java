@@ -13,7 +13,7 @@ public class BoardUtils {
 	
 	
 	public static final int NUM_TILES = 64;
-	public static final int NUM_TILES_PER_NOW = 8; 
+	public static final int NUM_TILES_PER_ROW = 8; 
 
 	
 
@@ -25,7 +25,7 @@ public class BoardUtils {
 		final boolean[] column = new boolean[NUM_TILES];
 		do {
 			column[columnNumber] = true;
-			columnNumber += NUM_TILES_PER_NOW;
+			columnNumber += NUM_TILES_PER_ROW;
 		}while(columnNumber < NUM_TILES);
 		return column;
 	}
@@ -35,7 +35,7 @@ public class BoardUtils {
 		do{
 			row[rowNumber] = true;
 			rowNumber++;
-		}while(rowNumber % NUM_TILES_PER_NOW != 0);
+		}while(rowNumber % NUM_TILES_PER_ROW != 0);
 		return row;
 	}
 	

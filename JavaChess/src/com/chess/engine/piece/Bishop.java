@@ -18,7 +18,7 @@ public class Bishop extends Piece{
 	private final static int[] CANDIDATE_MOVE_VECTOR_COORDINATES = { -9,-7,7,9 };
 
 	public Bishop(final Team pieceTeam, final int piecePosition) {
-		super(piecePosition, pieceTeam);
+		super(piecePosition, pieceTeam, PieceType.BISHOP);
 		// TODO Auto-generated constructor stub
 	}
 

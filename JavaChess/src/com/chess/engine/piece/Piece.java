@@ -9,12 +9,14 @@ import com.chess.engine.board.Move;
 
 public abstract class Piece {
 
+	protected final PieceType pieceType;
 	protected final int piecePosition;
 	protected final Team pieceTeam;
 	protected final boolean isFirstMove;
 	
 	
-	Piece(final int piecePosition, final Team pieceTeam){
+	Piece(final int piecePosition, final Team pieceTeam, final PieceType pieceType){
+		this.pieceType = pieceType;
 		this.piecePosition = piecePosition;
 		this.pieceTeam = pieceTeam;
 		
@@ -33,6 +35,9 @@ public abstract class Piece {
 		return this.isFirstMove;
 	}
 	
+	public PieceType getPieceType() {
+		return this.pieceType;
+	}
 
 	public abstract Collection<Move> calculateLegalMoves(final Board board);
 	
@@ -44,7 +49,12 @@ public abstract class Piece {
 		BISHOP("B"),
 		ROOK("R"),
 		QUEEN("Q"),
-		KING("K");
+		KING("K"){
+			@Override
+			public boolean isKing(){
+				return true;
+			}
+		};
 		
 		private String pieceName;
 
@@ -56,5 +66,9 @@ public abstract class Piece {
 		public String toString() {
 			return this.pieceName;
 		}
+		
+		public boolean isKing() {
+			return false;
+		};
 	}
 }
