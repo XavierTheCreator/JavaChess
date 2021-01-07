@@ -12,7 +12,8 @@ public abstract class Piece {
 	protected final PieceType pieceType;
 	protected final int piecePosition;
 	protected final Team pieceTeam;
-	protected final boolean isFirstMove;
+	protected final boolean isFirstMove; // Specifically for pawn 
+	private final int cachedHashCode;
 	
 	
 	Piece(final int piecePosition, final Team pieceTeam, final PieceType pieceType){
@@ -21,6 +22,33 @@ public abstract class Piece {
 		this.pieceTeam = pieceTeam;
 		
 		this.isFirstMove = false;
+		this.cachedHashCode = computeHashCode();
+	}
+	
+	private int computeHashCode() {
+		int result = pieceType.hashCode();
+		result = 31 * result + pieceTeam.hashCode();
+		result = 31 * result + piecePosition;
+		result = 31 * result + (isFirstMove ? 1 : 0);
+		return result;
+	}
+	
+	@Override
+	public boolean equals(final Object other) {
+		if(this == other ) {
+			return true;
+		}
+		if(!(other instanceof Piece)) {
+			return false;
+		}
+		final Piece otherPiece = (Piece) other;
+		return piecePosition == otherPiece.getPiecePosition() && pieceType == otherPiece.getPieceType() &&
+				pieceTeam == otherPiece.getPieceTeam() && isFirstMove == otherPiece.isFirstMove();
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.cachedHashCode;
 	}
 	
 	public int getPiecePosition() {
@@ -41,6 +69,7 @@ public abstract class Piece {
 
 	public abstract Collection<Move> calculateLegalMoves(final Board board);
 	
+	public abstract Piece movePiece(Move move);
 	
 	public enum PieceType{
 		

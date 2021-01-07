@@ -61,6 +61,12 @@ public class King extends Piece {
 	}
 	
 	@Override
+	public King movePiece (final Move move) {
+		
+		return new King(move.getMovePiece().getPieceTeam(),move.getDestinationCoordinate());
+	}
+	
+	@Override
 	public String toString() {
 		return PieceType.KING.toString();
 	}
@@ -77,5 +83,8 @@ public class King extends Piece {
 		return BoardUtils.EIGHTH_COLUMN[currentPosition] && (candidateOffset == -7 || candidateOffset == 1 || 
 				candidateOffset == 9);
 	}
+
+
+
 
 }
