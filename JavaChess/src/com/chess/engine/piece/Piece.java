@@ -76,7 +76,12 @@ public abstract class Piece {
 		PAWN("P"),
 		KNIGHT("N"),
 		BISHOP("B"),
-		ROOK("R"),
+		ROOK("R"){
+			@Override
+			public boolean isRook() {
+				return true;
+			}
+		},
 		QUEEN("Q"),
 		KING("K"){
 			@Override
@@ -99,5 +104,11 @@ public abstract class Piece {
 		public boolean isKing() {
 			return false;
 		};
+		
+		public boolean isRook() {
+			return false;
+		}; 
+		
 	}
+	
 }
