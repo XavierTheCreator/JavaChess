@@ -27,7 +27,7 @@ public class Table {
 		final JMenu fileMenu = new JMenu("File");
 		
 		final JMenuItem openPGN = new JMenuItem("Load PGN File");
-		openPGN.addActionListener(new ActionListner(){
+		openPGN.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Open the PGN file");
