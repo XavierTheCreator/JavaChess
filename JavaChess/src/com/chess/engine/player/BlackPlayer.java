@@ -9,7 +9,6 @@ import com.chess.engine.board.Board;
 import com.chess.engine.board.Move;
 import com.chess.engine.board.Move.KingSideCastleMove;
 import com.chess.engine.board.Move.QueenSideCastleMove;
-
 import com.chess.engine.board.Tile;
 import com.chess.engine.piece.Piece;
 import com.chess.engine.piece.Rook;
